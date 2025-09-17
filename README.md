@@ -1,0 +1,2 @@
+# javascript
+Documentation for JavaScript
