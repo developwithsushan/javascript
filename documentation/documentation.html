@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { custombg: '#030712' }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+        body {
+            font-family: 'Spectral', serif;
+        }
+        section { scroll-margin-top: 4rem; }
+        /* Apply only when <ul> has class="custom-list" */
+.custom-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* remove default bullets */
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.6rem;   /* space for the square */
+  margin: 0 0 0.75rem 0;
+  line-height: 1.6;
+  font-family: 'Spectral', serif; /* optional */
+}
+
+/* custom square */
+.custom-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;                
+  top: 50%;               /* vertical center */
+  width: 0.5rem;          /* square width */
+  height: 0.5rem;         /* square height */
+  background: #1f6feb;    /* square color */
+  border-radius: 2px;     /* optional: slightly rounded corners */
+  transform: translateY(-50%);
+}
+
+       
+    </style>
+</head>
+<body class="bg-custombg text-gray-200">
+
+<!-- Topbar -->
+<header class="sticky top-0 z-30 bg-[#030712] border-b border-gray-700 px-4 md:px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+        <button id="menuBtn" class="md:hidden text-2xl text-gray-200">☰</button>
+        <h1 class="text-lg font-bold text-white">📘 My Docs</h1>
+    </div>
+    <div class="flex-1 max-w-md mx-4 hidden sm:block">
+        <input type="text" placeholder="Search docs..." class="w-full px-3 py-2 rounded-md border border-gray-600 bg-[#111827] text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <button id="themeToggle" class="ml-4 px-3 py-2 text-sm rounded-md bg-gray-700 text-gray-200 hover:bg-gray-600">🌙</button>
+</header>
+
+<div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 bg-[#111827] border-r border-gray-700 p-6 transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out sticky top-0 h-screen z-40 overflow-y-auto">
+        <nav class="space-y-6">
+            <div>
+                <h2 class="text-gray-400 text-sm font-semibold uppercase tracking-wide cursor-pointer" onclick="toggleSection('docs')">1. Getting Started</h2>
+                <ul id="docs" class="mt-2 space-y-1">
+                    <li><a href="#javascript" class="block hover:text-blue-400">What is JavaScript? </a></li>
+                    <li><a href="#introdcution" class="block hover:text-blue-400">A Brief introduction to JavaScript</a></li>
+                    <li><a href="#action" class="block hover:text-blue-400">JavaScript in Action</a></li>
+
+                </ul>
+            </div>
+
+           
+        </nav>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-30 md:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-8 overflow-y-auto">
+        <h1 class="text-3xl font-bold mb-6 text-white">Getting Started</h1>
+
+        <section id="javascript" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-white">What is JavaScript ?</h2>
+            <p class="mb-4 text-gray-300">
+                JavaScript is a <span style="color:#FF9029">dynamic, weakly typed programming language</span> which is complied at runtime. It can be executed as a part of a web page in a browser or directly
+                on any machine (<span style="color:#FF9029">"host environment"</span>). <br>
+                JavaScript was created to <span style="color:#FF9029">make webpages more dynamic </span>(eg change content on a page directly from inside the browser). <br>
+                Originally it was called LiveScript but due to the popularity of Java, it was renamed to JavaScript. <br>
+                JavaScript is totally independent form Java and has nothing in common with Java.
+            </p>
+
+        </section>
+
+         <section id="javascript" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-white">A Brief introduction to JavaScript</h2>
+            <p class="mb-4 text-gray-300" style="margin-bottom: 10px;">
+                We can define JavaScript in many different ways. <br>
+            </p>
+            <p>
+                <i style="padding: 40px; margin-bottom: 10px;">JavaScript is a high level, object oriented, multi-paradigm programming language.</i>
+            </p>
+            <ul class="custom-list" style="margin-top: 20px;">
+                <li>
+                    A <span style="color: #FF9029">programming language</span> is basically just a tool that allows us to write code that will instruct
+                    a computer to do something.
+                </li>
+                <li>
+                    Javascript is a <span style="color: #FF9029">high level language </span>which means that we managing the computer's memory while
+                    it runs our program. In JavaScript there are a lot of so called abstractions over all these small details,
+                    that we dont need to worry about and this makes the language a lot easier to write and to learn.
+                </li>
+                <li>
+                    JavaScript is <span style="color: #FF9029">object oriented</span> all that means is that the language is mostly based on
+                    concepts of objects for storing most kinds of data.
+                </li>
+                <li>
+                    JavaScript is also a <span style="color: #FF9029">multi-paradigm language</span> - meaning that its so flexible and versatile that we can use all kinds of different programming styles such
+                    as imperative and declartive programming.
+                </li>
+            </ul>
+
+        </section>
+
+         <section id="action" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-white">JavaScript in Action (How is Javascript executed ?)</h2>
+            <p class="mb-4 text-gray-300">
+                Lets say we write our JavaScript code and want it to have some effect on the webpage. If we talk about the browser as the environment
+                
+            </p>
+
+        </section>
+
+       
+
+
+    </main>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+<script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.getElementById('menuBtn');
+    const overlay = document.getElementById('overlay');
+
+    // Dark mode
+    if (localStorage.getItem('theme') === 'dark') {
+        html.classList.add('dark');
+        toggle.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        const isDark = html.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        toggle.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    // Mobile menu toggle
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        overlay.classList.toggle('hidden');
+    });
+    overlay.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+    });
+
+    // Toggle collapsible sections
+    function toggleSection(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('hidden');
+    }
+
+    // Highlight active section and set sidebar color
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('aside nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (pageYOffset >= sectionTop) current = section.id;
+        });
+        navLinks.forEach(link => {
+            link.style.color = ''; // reset
+            if (link.getAttribute('href') === '#' + current) link.style.color = '#ff9029'; // active
+        });
+    });
+</script>
+
+
+</body>
+</html>
