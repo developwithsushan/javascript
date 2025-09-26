@@ -98,7 +98,16 @@
           <li><a href="#action" class="block hover:text-blue-400">JavaScript in Action</a></li>
           <li><a href="#dynamic" class="block hover:text-blue-400">Dynamic? Weakly Typed</a></li>
           <li><a href="#host" class="block hover:text-blue-400">JavaScript runs on a host environment</a></li>
+          <li><a href="#javavsjs" class="block hover:text-blue-400">JavaScript vs Java</a></li>
+          <li><a href="#history" class="block hover:text-blue-400">Overview of JavaScript History</a></li>
 
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-gray-400 text-sm font-semibold uppercase tracking-wide cursor-pointer" onclick="toggleSection('docs')">2. Fundamentals</h2>
+        <ul id="docs" class="mt-2 space-y-1">
+          <li><a href="#variables" class="block hover:text-blue-400">Introducing Variable and Constants</a></li>
         </ul>
       </div>
     </nav>
@@ -233,12 +242,147 @@
       </td>
     </tr>
   </tbody>
-</table>
+  </table>
 
         </section>
 
+         <section id="javavsjs" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-white">JavaScript vs Java</h2>
+            <p class="mb-4 text-gray-300">
+               <ul class="custom-list" style="margin-top: 20px;">
+                <li>
+              Totally independent programming languages with different syntax and principles.
+                </li>
+                <li>
+              Javascript runs on the browser, Java does not run in browser (not supported directly in browser)
+                </li>
+                <li>
+              Java is objected oriented, strongly typed. 
+                </li>
+                <li>
+              Javascript is flexible, weakly typed.
+                </li>
+                <li>
+              JavaScript was named just to sound cool
+                </li>
+            </p>
+
+            <table>
+  <thead>
+    <tr>
+      <th>Client Side (browser)</th>
+      <th>Server Side (Node JS)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       The origin of JavaScript
+      </td>
+      <td>
+        Why not use JS outside of the browser?
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Different beowser vendor provide their own JS execution engines (v8)
+      </td>
+      <td>
+        Extracted v8 engine to run JS anyehere.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Allows interaction with webpage and browsers, APIs (get user location)
+      </td>
+      <td>
+        Special non browser APIs (eg to work with file system, incoming HTTP requests etc)
+      </td>
+    </tr>
+  </tbody>
+  </table>
+            
+        </section>
        
 
+        <section id="history" class="mb-12">
+  <h2 class="text-2xl font-semibold mb-4 text-white">
+    A brief overview of JavaScript History
+  </h2>
+
+  <div class="relative border-l border-gray-600 pl-6">
+    <!-- Event -->
+    <div class="mb-8">
+      <div class="absolute -left-2.5 w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+      <h3 class="text-lg font-semibold text-indigo-400">1995</h3>
+      <p class="text-gray-300">
+        Brendan Eich creates JavaScript in just 10 days at Netscape.
+      </p>
+    </div>
+
+    <!-- Event -->
+    <div class="mb-8">
+      <div class="absolute -left-2.5 w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+      <h3 class="text-lg font-semibold text-indigo-400">1996</h3>
+      <p class="text-gray-300">
+        Microsoft releases its own version for IE.
+      </p>
+    </div>
+
+    <!-- Event -->
+    <div class="mb-8">
+      <div class="absolute -left-2.5 w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+      <h3 class="text-lg font-semibold text-indigo-400">Late 1996</h3>
+      <p class="text-gray-300">
+        is submitted to ECMA international to start standardization. 
+      </p>
+    </div>
+
+    <!-- Event -->
+    <div class="mb-8">
+      <div class="absolute -left-2.5 w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+      <h3 class="text-lg font-semibold text-indigo-400">1997-2005</h3>
+      <p class="text-gray-300">
+         Standardization efforts, microsoft didnot really join and support the standardized JS version though.
+      </p>
+    </div>
+
+    <!-- Event -->
+    <div>
+      <div class="absolute -left-2.5 w-5 h-5 bg-indigo-500 rounded-full border-2 border-white"></div>
+      <h3 class="text-lg font-semibold text-indigo-400">2006-2011</h3>
+      <p class="text-gray-300">
+        Huge progress in JavaScript ecosystem. Microsoft eventually joined forces. 
+      </p>
+    </div>
+  </div>
+       </section>
+
+        <h1 class="text-3xl font-bold mb-6 text-white">JavaScript Fundamentals</h1>
+
+        <section id="variables" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-white">Introducing Variables and Constants</h2>
+            <p class="mb-4 text-gray-300">
+              <span style="color:#FF9029">Variables & Constants :</span> That's a core feature not just of JavaScript but of most programming languages. <br>
+              A Variable is a data container or data storage where the value can change, doesn't have to but often it will. <br>
+              In JavaScript we create a variable by using the <i>let</i> keywords, then name of your choice with some naming rules, then an equal sign and then
+              the value you want to store in the variable. 
+            </p>
+              <pre><code class="language-javascript">let username = 'Sushan';</code></pre>
+            <p class="mb-4 text-gray-300">
+              Now with a variable created you can also always reassign it and store a new value in there.
+            </p>
+              <pre><code class="language-javascript">let username = 'Sush';</code></pre>
+            <p class="mb-4 text-gray-300">
+              Constants where the value most not change. <br>
+              JavaScript is a case sensitive. 
+            </p>
+            <h2 class="text-2xl font-semibold mb-4 text-white">Declaring & Defining Variables</h2>
+            <span style="color: aqua">Variable Naming : ALLOWED</span> <br>
+            
+            <span style="color: aqua">Variable Naming : NOT RECOMMENDED</span> <br>
+
+        </section>
 
     </main>
 </div>
